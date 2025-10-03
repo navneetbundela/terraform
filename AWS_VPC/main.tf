@@ -55,6 +55,9 @@ resource "aws_route_table_association" "public_sub" {
 }
 
 resource "aws_instance" "myinstance" {
+
+  depends_on = [ aws_vpc.myvpc ]
+
   ami           = "ami-0cfde0ea8edd312d4"
   instance_type = "t2.micro"
 
